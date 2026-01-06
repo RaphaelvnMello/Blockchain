@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "npx tsc",
+    "dev": "npx nodemon --watch '.src/' --exec 'npx ts-node ./src/blockchain.ts' -e ts",
+    "start": "node ./dist/blockchain.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,9 @@
     "url": "https://github.com/RaphaelvnMello/Blockchain/issues"
   },
   "homepage": "https://github.com/RaphaelvnMello/Blockchain#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
 }
