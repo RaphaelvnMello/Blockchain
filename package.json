@@ -2,10 +2,12 @@
   "name": "protochain",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "compile": "npx tsc",
     "dev": "npx nodemon --watch '.src/' --exec 'npx ts-node ./src/blockchain.ts' -e ts",
-    "start": "node ./dist/blockchain.js"
+    "start": "node ./dist/blockchain.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,16 @@
   "homepage": "https://github.com/RaphaelvnMello/Blockchain#readme",
   "description": "",
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@types/jest": "^30.0.0",
+    "crypto-js": "^4.2.0",
+    "D": "^1.0.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6"
   }
 }

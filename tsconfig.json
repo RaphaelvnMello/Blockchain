@@ -7,7 +7,7 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
+    "module": "ESNext",
     "target": "esnext",
     "types": [],
     // For nodejs:
@@ -40,5 +40,15 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+
+  },
+
+  "exclude":[
+    "__tests__", 
+    "jest.config.ts"
+  ],
+  "ts-node": {
+    "transpileOnly": true
+}
+
 }
