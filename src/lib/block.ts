@@ -1,4 +1,5 @@
-import * as CryptoJS from 'crypto-js'
+import * as CryptoJS from 'crypto-js';
+import Validation from './validation';
 
 export default class Block{
     index: number;
@@ -19,10 +20,12 @@ export default class Block{
         return CryptoJS.SHA256(this.index + this.data + this.timestamp + this.previusHash).toString();
     }
 
-    isValid() : boolean {
-        if(this.index < 0) return false;
-        if(!this.previusHash) return false;
-        return true;
+    isValid(previusHash: string, previousIndex : number) : Validation {
+        if(previousIndex !== this.index - 1) return new Validation(false, "Invalid Index");
+        if(this.index < 0) return new Validation(false, "Invalid Index");;
+        if(!this.previusHash) return new Validation(false, "Invalid Previous Hash");;
+        if(previusHash !== previusHash) return new Validation(false, "Invalid Previous Hash");;
+       return new Validation(true, "Success");
 
     }
 }
